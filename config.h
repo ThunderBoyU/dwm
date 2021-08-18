@@ -100,6 +100,12 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioNext, spawn,   {.v = nextcmd} },
 	{ 0,                            XF86XK_AudioPrev, spawn,   {.v = prevcmd} },
 
+	{ MODKEY,                       XK_p,      spawn,          {.v = pausecmd} },
+	{ MODKEY|ShiftMask,             XK_p,      spawn,          {.v = nextcmd} },
+  { MODKEY,			XK_bracketleft,		spawn,		SHCMD("mpc seek -10") },
+	{ MODKEY|ShiftMask,		XK_bracketleft,		spawn,		SHCMD("mpc seek -60") },
+	{ MODKEY,			XK_bracketright,	spawn,		SHCMD("mpc seek +10") },
+	{ MODKEY|ShiftMask,		XK_bracketright,	spawn,		SHCMD("mpc seek +60") },
 
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
