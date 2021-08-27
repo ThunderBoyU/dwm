@@ -1,8 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-#include <X11/XF86keysym.h>
-
-/* appearance */
+#include <X11/XF86keysym.h> /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -69,6 +67,7 @@ static const char *ytcmd[]  = { "yt", NULL };
 static const char *kbdcmd[]   = { "kbdlayout", NULL};
 static const char *firefoxcmd[] = {"firefox", NULL};
 static const char *musiccmd[] = {"st", "-e", "ncmpcpp", NULL};
+static const char *emailcmd[] = {"st", "-e", "neomutt", NULL};
 static const char *mixercmd[] = {"st", "-e", "pulsemixer", NULL};
 static const char *emojicmd[] = {"emojipick", NULL};
 static const char *notifpausecmd[] = {"dunstctl", "set-paused", "toggle", NULL};
@@ -87,6 +86,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_y,      spawn,          {.v = ytcmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = firefoxcmd } },
 	{ MODKEY,                       XK_m,      spawn,          {.v = musiccmd } },
+	{ MODKEY,                       XK_e,      spawn,          {.v = emailcmd } },
 	{ MODKEY|ShiftMask,             XK_m,      spawn,          {.v = mixercmd } },
 	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = emojicmd } },
 	{ MODKEY,                       XK_n,      spawn,          {.v = notifpausecmd } },
