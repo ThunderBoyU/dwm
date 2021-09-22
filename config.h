@@ -31,6 +31,8 @@ static const Rule rules[] = {
 	/* class     instance  title           tags mask  isfloating  isterminal  noswallow  monitor */
 	{ "Steam",   NULL,     NULL,           1 << 8,    0,          0,           0,        -1 },
 	{ "Gajim",   NULL,     NULL,           1 << 6,    0,          0,           0,        -1 },
+	{ "Dino",    NULL,     NULL,           1 << 6,    0,          0,           0,        -1 },
+	{ "easyeffects",   NULL,     NULL,     1 << 5,    0,          0,           0,        -1 },
 	/* I set st's termname to xterm-256color for ssh compatability or something idk, that's why it says xterm-256color here, the terminal is still st	*/
 	{ "xterm-256color",    NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
@@ -93,6 +95,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_n,      spawn,          {.v = notifpausecmd } },
 	{ MODKEY,                       XK_a,      spawn,          {.v = pausempvcmd } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = wallcmd} },
+	
+	{ MODKEY,                       XK_F1,      spawn,         SHCMD("easyeffects -l normal") }, 
+	{ MODKEY,                       XK_F2,      spawn,         SHCMD("easyeffects -l reverbation") },
+	{ MODKEY,                       XK_F3,      spawn,         SHCMD("easyeffects -l funny") },
+
 	{ MODKEY,			XK_space,  spawn,	   {.v = kbdcmd } },
 	{ 0,                            XK_Print,  spawn,          {.v = shotcmd} },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("pamixer -i 5; kill -44 $(pidof dwmblocks)") },
